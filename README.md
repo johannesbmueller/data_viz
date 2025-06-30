@@ -1,1 +1,1 @@
-# example code for Module 6 Python for data visualizatino course
+# example code for Module 6 Python for data visualization course
