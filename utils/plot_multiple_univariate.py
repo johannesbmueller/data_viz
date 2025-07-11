@@ -1,5 +1,8 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+from scipy import stats
 
 def plot_multiple_univariate_plots(df, column):
     plt.figure(figsize=(6, 4))
