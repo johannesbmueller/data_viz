@@ -21,10 +21,17 @@ This guide walks you through setting up Python for data visualization work using
 
 ## Prerequisites
 
-Create a working directory for your projects:
+### Download the Course Materials
 
-**Windows:** `C:\Users\<YourUsername>\Documents\data_viz_seminar`  
-**macOS:** `~/Documents/data_viz_seminar`
+1. Go to the course repository: **https://github.com/johannesbmueller/data_viz**
+2. Click the green **"Code"** button
+3. Select **"Download ZIP"**
+4. **Extract the ZIP file** to your Documents folder:
+   - **Windows:** Extract to `C:\Users\<YourUsername>\Documents\` (you'll get a folder called `data_viz-main`)
+   - **macOS:** Extract to `~/Documents/` (you'll get a folder called `data_viz-main`)
+5. **Optional:** Rename `data_viz-main` to just `data_viz` for simplicity
+
+**Your working folder is now:** `Documents/data_viz` (or `data_viz-main`)
 
 ---
 
@@ -75,7 +82,7 @@ mamba install jupyter pandas matplotlib seaborn numpy scipy -y
 ### Step 5: Setup VS Code
 
 1. Open **VS Code**
-2. **File → Open Folder** → Select `Documents\data_viz_seminar`
+2. **File → Open Folder** → Select `Documents\data_viz` (or `data_viz-main`)
 3. Press **Ctrl+Shift+P** → Type "Python: Select Interpreter" → Choose the one with **`viz_env`**
 4. Create a new file: Click **"New File"** → Save as `test_notebook.ipynb`
 5. If prompted, click **"Install"** for the Jupyter extension
@@ -182,7 +189,7 @@ mamba install jupyter pandas matplotlib seaborn numpy scipy -y
 ### Step 6: Setup VS Code
 
 1. Open **VS Code**
-2. **File → Open** → Select `Documents/data_viz_seminar`
+2. **File → Open** → Select `Documents/data_viz` (or `data_viz-main`)
 3. Press **Cmd+Shift+P** → Type "Python: Select Interpreter" → Choose the one with **`viz_env`**
 4. Create a new file: Click **"New File"** → Save as `test_notebook.ipynb`
 5. If prompted, click **"Install"** for the Jupyter extension
@@ -310,3 +317,5 @@ If you run into issues:
 4. Ask your instructor for help
 
 ---
+
+*Last updated: November 2025*
