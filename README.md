@@ -1,6 +1,4 @@
 # example code and instructions for module 6 python for data visualization course
-
-
 # Python Setup for Data Visualization
 
 A beginner-friendly guide for setting up Python with Jupyter notebooks for data visualization work. This guide uses **Miniforge** (free, open-source, no licensing restrictions) instead of Anaconda.
@@ -75,6 +73,48 @@ print(f"Seaborn: {sns.__version__}")
 
 ## macOS Setup
 
+### 0. Remove Existing Anaconda/Miniconda (if installed)
+
+**Check if you have Anaconda/Miniconda:** Open Terminal and look at your prompt. If you see `(base)` before your username, you have conda installed.
+
+**To remove it:**
+
+1. Remove conda initialization:
+```bash
+conda init --reverse
+```
+
+2. Close and reopen Terminal
+
+3. Remove the installation directory (check which one exists):
+```bash
+# Check which directory exists:
+ls -la ~ | grep -E 'anaconda|miniconda|miniforge'
+
+# Remove the one you find (usually one of these):
+rm -rf ~/anaconda3
+# OR
+rm -rf ~/miniconda3
+# OR
+rm -rf ~/opt/anaconda3
+```
+
+4. Clean up your shell config file (removes conda references):
+```bash
+# For macOS default (zsh):
+nano ~/.zshrc
+# Look for lines with 'conda' and delete them, then save (Ctrl+O, Enter, Ctrl+X)
+
+# Or use this automated cleanup:
+sed -i.bak '/conda/d' ~/.zshrc
+```
+
+5. Close and reopen Terminal - `(base)` should be gone
+
+**If you're not sure what to remove,** you can also just proceed with Miniforge installation, but having multiple conda installations can cause conflicts.
+
+---
+
 ### 1. Install Miniforge
 
 **Check your chip:**
@@ -88,19 +128,55 @@ print(f"Seaborn: {sns.__version__}")
    - **Apple Silicon:** `Miniforge3-MacOSX-arm64.sh`
    - **Intel:** `Miniforge3-MacOSX-x86_64.sh`
 
-2. Open Terminal and run:
+2. **Install Miniforge:**
 
-```bash
-cd ~/Downloads
-bash Miniforge3-MacOSX-*.sh
-```
+   Open Terminal and run:
+   
+   ```bash
+   cp ~/Downloads/Miniforge3-MacOSX-arm64.sh ~
+   cd ~
+   bash Miniforge3-MacOSX-arm64.sh
+   ```
+   
+   **Note:** Replace `arm64` with `x86_64` if you have an Intel Mac
+   
+   **Why copy it?** macOS has strict security on the Downloads folder. Moving it to your home directory avoids permission issues.
 
 3. Follow prompts:
    - Press Enter to review license
    - Type `yes` to accept
    - Press Enter for default location
-   - Type `yes` to initialize
-   - Close and reopen Terminal
+   - **Important:** When asked "Do you wish to update your shell profile to automatically initialize conda?" → Type `yes`
+     - This allows you to use `mamba activate` commands in any Terminal window
+     - Note: Miniforge uses mamba for commands but conda for initialization - this is normal
+   
+4. **CRITICAL: Restart Terminal completely**
+   
+   ⚠️ **You MUST do this or mamba won't work!**
+   
+   - Press **Cmd+Q** to **completely quit Terminal** (don't just close the window!)
+   - Wait 2 seconds
+   - Open Terminal again from Applications
+   - You should now see `(base)` at the start of your prompt
+   
+   **Test it worked:**
+   ```bash
+   mamba --version
+   ```
+   
+   If you see a version number, you're good! If you see "command not found", run:
+   ```bash
+   ~/miniforge3/bin/conda init zsh
+   ```
+   Then quit and reopen Terminal again (Cmd+Q).
+   
+5. **(Optional) Disable auto-activation of base environment:**
+   
+   If you don't want to see `(base)` in your prompt every time:
+   ```bash
+   conda config --set auto_activate_base false
+   ```
+   Then quit Terminal (Cmd+Q) and reopen. You'll only see environment names when you explicitly activate them.
 
 ### 2. Install VS Code
 
