@@ -86,11 +86,12 @@ mamba install jupyter pandas matplotlib seaborn numpy scipy -y
 3. Press **Ctrl+Shift+P** → Type "Python: Select Interpreter" → Choose the one with **`viz_env`**
 4. Create a new file: Click **"New File"** → Save in the notebooks folder as `test_notebook.ipynb`
 5. If prompted, click **"Install"** for the Jupyter extension
-6. **Click the kernel selector** (top-right corner) → Choose **`viz_env`**
 
 ### Step 6: Test Your Setup
 
 In the first cell of your notebook, paste and run (Shift+Enter):
+When running first time you will have to select your environment:
+Window pop-up → Choose 'Python Environments... → Choose **`viz_env`**
 
 ```python
 import pandas as pd
@@ -193,11 +194,12 @@ mamba install jupyter pandas matplotlib seaborn numpy scipy -y
 3. Press **Cmd+Shift+P** → Type "Python: Select Interpreter" → Choose the one with **`viz_env`**
 4. Create a new file: Click **"New File"** → Save in the notebooks folder as `test_notebook.ipynb`
 5. If prompted, click **"Install"** for the Jupyter extension
-6. **Click the kernel selector** (top-right corner) → Choose **`viz_env`**
 
 ### Step 7: Test Your Setup
 
 In the first cell of your notebook, paste and run (Shift+Enter):
+When running first time you will have to select your environment:
+Window pop-up → Choose 'Python Environments... → Choose **`viz_env`**
 
 ```python
 import pandas as pd
