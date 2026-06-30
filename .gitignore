@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Claude Code conversation logs
+.conversation_log.*
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+env/
+venv/
