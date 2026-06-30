@@ -63,12 +63,17 @@ libraries. It comes with a fast installer called **`mamba`** that we use below.
 ### 3. Create the course environment
 1. Open the **Miniforge Prompt** from the Start Menu (type "Miniforge" to find it).
    A black window opens with `(base)` at the start of the line.
-2. Go into the course folder (adjust the path if you renamed it):
-   ```bat
-   cd %USERPROFILE%\Documents\data_viz-main
-   ```
-3. Create the environment from the included file (this downloads everything —
-   it can take a few minutes):
+2. Move into your course folder — **the easy way, no typing of paths:**
+   - Type `cd` followed by a **space** (do *not* press Enter yet):
+     ```bat
+     cd 
+     ```
+   - Open **File Explorer**, find your `data_viz-main` folder, and **drag the folder
+     onto the Miniforge Prompt window**. Its full path is filled in automatically.
+   - Now press **Enter**.
+3. Check you landed in the right place: type `dir` and press Enter. You should see
+   `environment.yml` in the list. *(If you don't, repeat step 2.)*
+4. Create the environment (this downloads everything — it can take a few minutes):
    ```bat
    mamba env create -f environment.yml
    ```
@@ -115,12 +120,18 @@ library the course needs. **Continue to "Open the course in VS Code" below.**
 2. Open the downloaded file and drag **Visual Studio Code** into your **Applications** folder.
 
 ### 3. Create the course environment
-In Terminal:
-```bash
-cd ~/Documents/data_viz-main
-mamba env create -f environment.yml
-```
-(This downloads everything and can take a few minutes.)
+1. In **Terminal**, type `cd` followed by a **space** (do *not* press Enter yet):
+   ```bash
+   cd 
+   ```
+2. Open **Finder**, find your `data_viz-main` folder, and **drag it onto the Terminal
+   window**. Its full path is filled in automatically. Now press **Enter**.
+3. Check you landed in the right place: type `ls` and press Enter. You should see
+   `environment.yml` listed. *(If you don't, repeat steps 1–2.)*
+4. Create the environment (this downloads everything — it can take a few minutes):
+   ```bash
+   mamba env create -f environment.yml
+   ```
 
 ✅ When it finishes you have an environment called **`viz_env`**.
 **Continue to "Open the course in VS Code" below.**
@@ -151,10 +162,20 @@ Then **close and reopen the terminal**. You should see **`(base)`** at the start
 - Or install via your distro's software center / snap: `sudo snap install code --classic`.
 
 ### 3. Create the course environment
-```bash
-cd ~/Documents/data_viz-main
-mamba env create -f environment.yml
-```
+1. In your **terminal**, type `cd` followed by a **space** (do *not* press Enter yet):
+   ```bash
+   cd 
+   ```
+2. Open your **file manager**, find your `data_viz-main` folder, and **drag it onto
+   the terminal window**. Its full path is filled in automatically. Press **Enter**.
+   *(If drag-and-drop doesn't work in your file manager, copy the folder's path and
+   paste it after `cd `.)*
+3. Check you landed in the right place: type `ls` and press Enter. You should see
+   `environment.yml` listed. *(If you don't, repeat steps 1–2.)*
+4. Create the environment (this downloads everything — it can take a few minutes):
+   ```bash
+   mamba env create -f environment.yml
+   ```
 
 ✅ When it finishes you have an environment called **`viz_env`**.
 **Continue below.**
